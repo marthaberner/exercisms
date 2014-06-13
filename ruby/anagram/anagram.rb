@@ -5,20 +5,21 @@ class Anagram
   end
 
   def match(list_of_words)
-    anagram_list = []
+    result = []
     list_of_words.each do |word|
       if word.downcase == @word.downcase
-      elsif first_do(word) == first_do(@word)
-        anagram_list << word
-      else
-        []
+      elsif word_prep(word) == word_prep(@word)
+        result << word
       end
     end
-    anagram_list
+  result
+  end
+
+  def sort
 
   end
 
-  def first_do(word)
-    word.downcase.chars.sort
+  def word_prep(word)
+  word.downcase.chars.sort
   end
-  end
+end
