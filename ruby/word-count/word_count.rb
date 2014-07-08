@@ -4,15 +4,14 @@ class Phrase
     @phrase = phrase
   end
 
-  def word_count
-    result = Hash.new(0)
-    prepped_phrase.each do |word|
-      result[word] += 1
-    end
-    result
-  end
 
-  def prepped_phrase
-   @phrase.downcase.gsub(/[^\w\s\d\']/, ' ').split
+  def word_count
+    result = {}
+    i = 1
+      word_array = @phrase.split(" ")
+      word_array.each do |word|
+         result[word] ||= i
+      end
+    result
   end
 end
