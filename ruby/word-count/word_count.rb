@@ -1,7 +1,7 @@
 class Phrase
 
   def initialize(phrase)
-    @phrase = phrase
+    @phrase = phrase.gsub(/[^\w\s\']/, " ")
   end
 
 

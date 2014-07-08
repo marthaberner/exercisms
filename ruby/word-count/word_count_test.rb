@@ -23,7 +23,7 @@ class PhraseTest < MiniTest::Unit::TestCase
   end
 
   def test_count_everything_just_once
-    pending
+
     phrase = Phrase.new("all the kings horses and all the kings men")
     phrase.word_count # count it an extra time
     counts = {
@@ -33,8 +33,7 @@ class PhraseTest < MiniTest::Unit::TestCase
   end
 
   def test_ignore_punctuation
-    pending
-    phrase = Phrase.new("car : carpet as java : javascript!!&@$%^&")
+      phrase = Phrase.new("car : carpet as java : javascript!!&@$%^&")
     counts = {"car" => 1, "carpet" => 1, "as" => 1, "java" => 1, "javascript" => 1}
     assert_equal counts, phrase.word_count
   end
