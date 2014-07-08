@@ -1,14 +1,13 @@
 class Phrase
 
   def initialize(phrase)
-    @phrase = phrase.gsub(/[^\w\s\']/, " ")
+    @phrase = phrase
   end
 
 
   def word_count
     result = {}
-    word_array = @phrase.split(" ")
-    word_array.each do |word|
+    word_prep.each do |word|
       if result[word]
         result[word] += 1
       else
@@ -16,5 +15,9 @@ class Phrase
       end
     end
     result
+  end
+
+  def word_prep
+    @phrase.downcase.gsub(/[^\w\s\']/, " ").split
   end
 end

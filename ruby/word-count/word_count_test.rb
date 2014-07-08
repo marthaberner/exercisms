@@ -39,28 +39,28 @@ class PhraseTest < MiniTest::Unit::TestCase
   end
 
   def test_handles_cramped_lists
-    pending
+
     phrase = Phrase.new("one,two,three")
     counts = {"one" => 1, "two" => 1, "three" => 1}
     assert_equal counts, phrase.word_count
   end
 
   def test_include_numbers
-    pending
+
     phrase = Phrase.new("testing, 1, 2 testing")
     counts = {"testing" => 2, "1" => 1, "2" => 1}
     assert_equal counts, phrase.word_count
   end
 
   def test_normalize_case
-    pending
+
     phrase = Phrase.new("go Go GO")
     counts = {"go" => 3}
     assert_equal counts, phrase.word_count
   end
 
   def test_with_apostrophes
-    pending
+    
     phrase = Phrase.new("First: don't laugh. Then: don't cry.")
     counts = {"first"=>1, "don't"=>2, "laugh"=>1, "then"=>1, "cry"=>1}
     assert_equal counts, phrase.word_count
