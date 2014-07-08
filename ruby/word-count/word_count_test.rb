@@ -16,7 +16,7 @@ class PhraseTest < MiniTest::Unit::TestCase
   end
 
   def test_count_multiple_occurrences
-    pending
+
     phrase = Phrase.new("one fish two fish red fish blue fish")
     counts = {"one" => 1, "fish" => 4, "two" => 1, "red" => 1, "blue" => 1}
     assert_equal counts, phrase.word_count

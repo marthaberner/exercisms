@@ -7,11 +7,14 @@ class Phrase
 
   def word_count
     result = {}
-    i = 1
-      word_array = @phrase.split(" ")
-      word_array.each do |word|
-         result[word] ||= i
+    word_array = @phrase.split(" ")
+    word_array.each do |word|
+      if result[word]
+        result[word] += 1
+      else
+        result[word] = 1
       end
+    end
     result
   end
 end
